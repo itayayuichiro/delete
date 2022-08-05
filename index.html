@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- CSRF Token -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
+<title>
+    Vote
+</title>
+<!-- <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}"/> -->
+<script>
+</script>
+<!-- Styles -->
+<!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+<link href="./css/destyle.css" rel="stylesheet">
+<link href="./css/style.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r84/three.min.js"></script>
+<script src="./js/custom.js"></script>
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<!– Global site tag (gtag.js) – Google Analytics –>
+<script async src=”https://www.googletagmanager.com/gtag/js?id=G-LHBXWHPT2L”></script>
+<!-- Ptengine Tag -->
+<script src="https://js.ptengine.jp/1anrb11n.js"></script>
+<!-- End Ptengine Tag -->
+
+</head>
+<body>
+  <script>
+    const number = ["1st","2nd","3rd"];
+    var category_id = "";
+    var prefectures = "";
+    var is23Wards = "";
+    window.onload = function() {
+      $.ajax('http://localhost:8887/api/ranking?category_id=1&prefectures=&is23Wards=false',
+          {
+            type: 'get'
+          }
+        )
+        .done(function(data) {
+          console.log(data)
+        })
+      }
+    
+  </script>
+</body>
+</html>
